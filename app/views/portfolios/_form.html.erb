@@ -1,0 +1,42 @@
+<%= form_with model: @work, local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :title, "Project Title" %>
+    <%= form.text_field :title, required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description, "Project Description" %>
+    <%= form.text_area :description, rows: 5, required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :technologies, "Technologies Used" %>
+    <%= form.text_field :technologies_used, required: true %>
+  </div>
+  <div class="form-group">
+    <%= form.label :screenshots, "Project Screenshots" %>
+    <%= form.file_field :screenshots, multiple: true, accept: "image/*" %>
+  </div>
+  <% if @work.persisted? && Dir.exists?(Rails.root.join(Portfolio.images_folder_path, @work.id.to_s)) %>
+    <div class="form-group">
+      <label>Existing Screenshots</label>
+      <div class="existing-screenshots">
+        <div class="screenshot-div">
+          <% Dir.foreach(Rails.root.join(Portfolio.images_folder_path, @work.id.to_s)) do |filename| %>
+            <% next if filename == '.' || filename == '..' %>
+              <%= image_tag("/assets/portfolio/images/#{@work.id}/#{filename}") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :website, "Project Website" %>
+    <%= form.url_field :website_link %>
+  </div>
+  <div class="submit-button-container">
+    <%if @work.persisted? %>
+      <%= form.submit "Update Work", class: "submit-button" %>
+    <%else%>
+      <%= form.submit "Create Work", class: "submit-button" %>
+    <%end%>
+  </div>
+<% end %>

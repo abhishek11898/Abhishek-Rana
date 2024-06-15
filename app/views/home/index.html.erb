@@ -1,0 +1,128 @@
+<%= javascript_include_tag "homes.js" %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'homes.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<div class='home-container'>
+  <div class='introduction'>
+    <div class='section-1'>
+      <div class='name'>
+        Abhishek Rana
+      </div>
+      <div class='profession'>
+        Full Stack Software Engineer
+      </div>
+      <div class='tagline'>
+        Fusing Leadership, Creativity and Intution to Deliver Exceptional Digital Solutions
+      </div>
+      <div class='butttons'>
+        <div class='buttons'>
+          <a id="sauce-button" class="sauce-button">
+            <div class="sauce-button__content" data-section="get-in-touch">
+              Get in Touch
+              <svg width="72" height="22" viewBox="0 0 72 22" xmlns="http://www.w3.org/2000/svg" class="bow-arrow">
+                <path fill="none" stroke="#4831d4" stroke-width="2" stroke-miterlimit="0" d="M.043 11.119h70.714M60.917 1.319l9.8 9.8-9.8 9.8"></path>
+              </svg>
+            </div>
+          </a>
+      </div>
+      </div>
+      <div class='summary'>
+        <h1>About Me</h1>
+        With over 4 years of experience as a Full Stack Software Engineer, I specialize in creating innovative and scalable web solutions that drive business 
+        success. My unique blend of leadership, creativity, and intuition ensures that each project not only meets but exceeds client expectations.
+        <br>I am passionate about solving complex web development challenges and delivering exceptional results. Whether it's building dynamic user interfaces, 
+        developing robust back-end systems, or optimizing performance, I am dedicated to turning your vision into reality.
+        <br>Explore my portfolio to see how I can help elevate your digital presence and transform your web development ideas into impactful solutions.
+      </div>
+    </div>
+    <div class="section-2">
+      <%= image_tag "handsome", class: 'abhishek-image' %>
+      <%= image_tag "hero-devices", class: 'devices-image' %> 
+    </div>
+    <div class='section-3'>
+      <nav class="kfDSgG" aria-label="Main navigation." id="section-nav">
+        <ul>
+          <li><button type="button" aria-label="Go to first section. Pitch." class="nav-bullet current" data-section = 'header'></button></li>
+          <li><button type="button" aria-label="Go to second section. Cornerstone." class="nav-bullet" data-section = 'choose-us-section'></button></li>
+          <li><button type="button" aria-label="Go to third section. Experience." class="nav-bullet" data-section = 'get-in-touch'></button></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<br>
+<div class='choose-us-section'>
+<br>
+  <div class="choose-us">
+      <div class="headline">
+        Why Choose Me ?
+      </div>
+      <div class="points">
+        <div>
+          <i class="fas fa-project-diagram"></i>
+          My experience in leading projects and teams ensures that your project will be managed effectively and delivered on time. I bring a unique blend of creativity and technical know-how to every project, ensuring that the solutions are not only functional but also visually appealing and user-friendly.
+        </div>
+        <div>
+          <i class="fas fa-lightbulb"></i>
+          My intuitive approach to design ensures that user experience is at the forefront of every project, resulting in interfaces that are easy to navigate and engaging. I pay close attention to the finer details, ensuring that every element of your website aligns with your vision and objectives.
+        </div>
+        <div>
+          <i class="fas fa-award"></i>
+          I am committed to delivering high-quality work that exceeds expectations. Every project I undertake is a reflection of my dedication to excellence. I stay updated with the latest industry trends and technologies to ensure that I provide the most current and effective solutions.
+        </div>
+        <div>
+          <i class="fas fa-handshake"></i>
+          I work closely with clients to understand their needs and goals, ensuring that the final product aligns with their vision. My track record of positive testimonials from satisfied clients highlights my ability to deliver exceptional results.
+        </div>
+        <div>
+          <i class="fas fa-mobile-alt"></i>
+          Whether you need a simple website or a complex web application, I have the flexibility to adapt to your specific needs. I ensure that all my projects are optimized for performance across various devices and screen sizes.
+        </div>
+      </div>
+      <div class="custom-button-wrapper">
+        <%= link_to portfolios_path, class: "custom-button" do %>
+          <div class="custom-button-inner">
+            View My Portfolio
+            <%= tag.svg width: 72, height: 22, viewBox: "0 0 72 22", class: "custom-button-icon" do %>
+              <%= tag.path fill: "none", stroke: "#ffffff", "stroke-width": 2, "stroke-miterlimit": 0, d: "M.043 11.119h70.714M60.917 1.319l9.8 9.8-9.8 9.8" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+<section class="get-in-touch" data-section="contact">
+  <div class="inner-content">
+    <article class="contact-article" data-theme="electric">
+      <div class="contact-content">
+        <h2>Send me a message!</h2>
+        <p>Have a question or proposal, or just want to say hello? Reach out to me.</p>
+      </div>
+    </article>
+    <%= form_with(url: contact_form_home_index_url, method: 'post', class: 'contact-form') do |form| %>
+      <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+      <div class="form-row">
+        <div class="input-group" data-id="full-name">
+          <%= form.label :full_name, 'Your Name' %>
+          <%= form.text_field :full_name, id: 'full-name', placeholder: 'Enter your name', required: true%>
+        </div>
+        <div class="input-group" data-id="email">
+          <%= form.label :email, 'Email Address' %>
+          <%= form.email_field :email, id: 'email', placeholder: 'Enter your email address', required: true %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group" data-id="message">
+          <%= form.label :message, 'Your Message' %>
+          <%= form.text_area :message, id: 'message', placeholder: 'Hi, Company X is looking to enhance its digital presence with a new website. Can we schedule a meeting to explore this opportunity further?', required: true, rows: 7, minlength: 30 %>
+        </div>
+      </div>
+      <button class="custom-button" type="submit">
+        <div class="button-content">Send Message</div>
+      </button>
+    <% end %>
+  </div>
+</section>
+

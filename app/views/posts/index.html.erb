@@ -1,0 +1,31 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'post.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'portfolio.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<section class="post-section">
+  <div class="container">
+    <div class="post-header">
+      <h2>Insights & Inspirations</h2>
+      <p>Dive into a treasure trove of web development expertise, where I share insights, tips, and tutorials to inspire your coding journey and elevate your skills.</p>
+      <%=button_to 'Add-Post', new_post_path, class: "add-work-btn", method: :get%>
+    </div>
+    <div class="post-content">
+      <%if @posts.present?%>
+        <%  @posts.each do |post|%>
+          <%= link_to post_path(post), class: 'post-link' do %>
+            <div class="post-item">
+              <% if post.persisted? && post.image_name.present? && File.exist?(Rails.root.join(Post.images_folder_path, post.id.to_s, post.image_name)) %>
+                <%= image_tag("/assets/post/images/#{post.id}/#{post.image_name}", alt: "hero-devices")%>
+              <%else%>
+                <%= image_tag 'hero-devices', alt: "Project 1", class: 'post-image' %>
+              <%end%>
+              <h3><%= post.title %></h3>
+              <p class='description'><%= post.description %></p>
+            </div>
+          <%end%>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</section>

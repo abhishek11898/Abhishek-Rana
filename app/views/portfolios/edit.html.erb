@@ -1,0 +1,12 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'portfolio.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<div class="edit-work-page">
+  <section class="edit-work-section">
+    <div class="header">
+      <h1>Edit Work</h1>
+    </div>
+    <%= render partial: "form" %>
+  </section>
+</div>

@@ -1,0 +1,53 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'portfolio.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<section class="project-show-section">
+  <div class="container">
+    <div class="project-header">
+        <h1><%= @portfolio.title%></h1>
+        <div class='buttons'>
+          <%=link_to 'Edit-Work', edit_portfolio_path(@portfolio), class: "edit-work-btn", method: :get%>
+          <%= link_to 'Delete-Work', portfolio_path(@portfolio), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
+        </div>
+    </div>
+    <div class="project-content">
+      <div class="project-details">
+        <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+        <p><%= @portfolio.description%></p>
+        
+        <h3><i class="fas fa-tools"></i> Technologies Used</h3>
+        <ul>
+          <% @portfolio.technologies_used.split(',').each do |technology| %>
+            <li><%= technology.strip %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="project-screenshots">
+        <h2><i class="fas fa-camera"></i> Screenshots</h2>
+        <div class="screenshots-div">
+          <% images_folder_path = Rails.root.join(Portfolio.images_folder_path, @portfolio.id.to_s) %>
+          <% if Dir.exist?(images_folder_path) %>
+            <% Dir.foreach(images_folder_path) do |filename| %>
+              <% next if filename == '.' || filename == '..' %>
+              <% file_path = File.join(Portfolio.images_folder_relative_path, @portfolio.id.to_s, filename) %>
+              <%= image_tag file_path, alt: "Project 1", class: 'screenshot' %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="project-website">
+      <h3><i class="fas fa-external-link-alt"></i> Website</h3>
+      <p>Visit the project website: <%=link_to @portfolio.title, @portfolio.website_link%></p>
+    </div>
+    <%= link_to '/portfolios', class: 'back-button' do %>
+      <i class="fas fa-arrow-left"></i>
+      Back to Portfolio
+    <% end %>
+
+  </div>
+</section>
+
+
+

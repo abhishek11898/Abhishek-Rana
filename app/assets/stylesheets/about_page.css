@@ -1,0 +1,381 @@
+/* General Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #eef2f5;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  overflow-y: visible !important;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* About Section Styles */
+.about-section {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef); /* Very light gray gradient */
+  padding: 50px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content {
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.about-content h1 {
+  font-size: 2.5em;
+  color: #343a40; /* Dark gray for a professional effect */
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.about-content h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #ffc107; /* Amber accent for creativity */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Decorative Elements */
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 193, 7, 0.1); /* Soft amber circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.about-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(52, 58, 64, 0.1); /* Soft dark gray circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content h1 {
+    font-size: 2em;
+  }
+  
+  .about-content p {
+    font-size: 1em;
+  }
+}
+
+/* Skills Section Styles */
+.skills-section {
+  background: linear-gradient(to bottom right, #343a40, #495057); /* Dark gray gradient */
+  padding: 60px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-content h2 {
+  font-size: 2.5em;
+  color: #f8f9fa; /* Light gray for contrast */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.skills-content h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ffc107; /* Amber accent */
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.skills-content h3 {
+  font-size: 2em;
+  color: #f8f9fa; /* Light gray for contrast */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+
+.skills-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills-content ul li {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin: 15px;
+  color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 200px;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #6c757d;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-content ul li i {
+  color: #ffc107; /* Amber color matching the heading underline */
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+.skills-content ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative Elements */
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 193, 7, 0.1); /* Soft amber circle */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.skills-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 250px;
+  height: 250px;
+  background: rgba(52, 58, 64, 0.1); /* Soft dark gray circle */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-content h2 {
+    font-size: 2em;
+  }
+  
+  .skills-content ul li {
+    font-size: 1em;
+  }
+  
+  .skills-content ul li i {
+    font-size: 1.2em;
+  }
+}
+
+/* Personal Touch Section Styles */
+.personal-touch-section {
+  margin-top: 30px;
+  background: linear-gradient(to bottom right, #e9ecef, #dee2e6); /* Light gray gradient */
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-touch-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.personal-touch-content h2 {
+  font-size: 2.5em;
+  color: #343a40; /* Dark gray for a calming and professional effect */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.personal-touch-content h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #ffc107; /* Amber accent */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* Decorative Elements */
+.personal-touch-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 193, 7, 0.1); /* Soft amber circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.personal-touch-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(52, 58, 64, 0.1); /* Soft dark gray circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .personal-touch-content h2 {
+    font-size: 2em;
+  }
+
+  .card p {
+    font-size: 1em;
+  }
+}
+
+/* Spirituality Section Styles */
+.spirituality-section {
+  background: linear-gradient(to bottom right, #495057, #343a40); /* Dark gray gradient */
+  padding: 50px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.spirituality-content {
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.spirituality-content h2 {
+  font-size: 2.5em;
+  color: #f8f9fa; /*
+Light gray for contrast */
+margin-bottom: 20px;
+text-align: center;
+position: relative;
+}
+
+.spirituality-content h2::after {
+content: '';
+display: block;
+width: 80px;
+height: 3px;
+background-color: #ffc107; /* Amber accent */
+margin: 10px auto 0;
+border-radius: 2px;
+}
+
+.spirituality-content p {
+font-size: 1.2em;
+line-height: 1.6;
+margin-bottom: 20px;
+color: #f8f9fa; /* Light gray for contrast */
+}
+
+/* Decorative Elements */
+.spirituality-section::before {
+content: '';
+position: absolute;
+top: -50px;
+right: -50px;
+width: 200px;
+height: 200px;
+background: rgba(255, 193, 7, 0.1); /* Soft amber circle */
+border-radius: 50%;
+z-index: 1;
+}
+
+.spirituality-section::after {
+content: '';
+position: absolute;
+bottom: -50px;
+left: -50px;
+width: 200px;
+height: 200px;
+background: rgba(52, 58, 64, 0.1); /* Soft dark gray circle */
+border-radius: 50%;
+z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.spirituality-content h2 {
+  font-size: 2em;
+}
+
+.spirituality-content p {
+  font-size: 1em;
+}
+}
+
+
+

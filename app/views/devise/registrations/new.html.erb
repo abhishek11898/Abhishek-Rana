@@ -1,0 +1,29 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'auth.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<div class="auth-container">
+  <div class="auth-background"></div>
+  <div class="auth-box">
+    <h1 class="auth-heading">Sign Up</h1>
+    <%= form_with(model: resource, as: resource_name, url: registration_path(resource_name), class: 'auth-form') do |form| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="form-group">
+        <%= form.label :email, 'Email Address' %>
+        <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your email address', required: true %>
+      </div>
+      <div class="form-group">
+        <%= form.label :password, 'Password' %>
+        <%= form.password_field :password, autocomplete: "new-password", placeholder: 'Create a password', required: true %>
+      </div>
+      <div class="form-group">
+        <%= form.label :password_confirmation, 'Confirm Password' %>
+        <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm your password', required: true %>
+      </div>
+      <%= form.submit 'Sign Up', class: 'custom-button' %>
+    <%end%>
+    <div class="switch-auth">
+      Already have an account? <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

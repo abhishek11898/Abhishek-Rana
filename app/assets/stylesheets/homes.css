@@ -1,0 +1,688 @@
+body{
+  overflow-y: hidden;
+}
+
+.home-container{
+  display: flex;
+  justify-content: center;
+  background-color: #f0f8ff; /* Alice Blue */
+  height: 89vh;
+  flex-direction: row;
+}
+
+.home-container .introduction{
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.home-container .introduction .name {
+  margin-top: 100px;
+  font-size: 50px;
+  font-family: 'Georgia', serif; /* Serif font for elegance */
+  color: #2c3e50; /* Dark blue for professionalism and calmness */
+}
+
+.home-container .introduction .profession {
+  font-size: 25px;
+  font-family: 'Georgia', serif; /* Serif font for consistency and elegance */
+  font-weight: 500;
+  color: #2980b9; /* Soft blue for creativity and intuition */
+  margin-top: 10px;
+}
+
+.home-container .introduction .tagline {
+  font-size: 18px;
+  font-family: 'Georgia', serif; /* Serif font for elegance */
+  color: #34495e; /* Darker shade for readability and sophistication */
+  margin-top: 20px;
+  line-height: 1.5; /* Increased line height for better readability */
+}
+
+.home-container .devices-image {
+  margin-top: 100px;
+  width: 500px;
+}
+
+.section-1 {
+  flex: 3; 
+}
+
+.section-2 {
+  flex: 2;
+}
+
+.home-container .section-2{
+  margin: 5px;
+  align-items: center;
+}
+
+.home-container .section-2 .abhishek-image {
+  width: 400px;
+  height: 400px;
+  margin-top: 150px;
+}
+
+.home-container .summary {
+  margin: 60px 60px 10px 0px; /* Adjusted to a shorthand property for consistency */
+  text-align: center;
+  background-color: #F9F5EB; /* Light color representing Venus */
+  color: #283593; /* Golden color representing Sun */
+  padding: 15px;
+  border-radius: 10px; /* Adding a subtle border radius for aesthetic appeal */
+  font-family: 'Arial, sans-serif'; /* Clear and attractive font */
+  font-size: 1.2rem;
+  line-height: 1.6; /* Better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.home-container .summary h1 {
+  font-size: 2rem; /* Larger font size for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #e74c3c; /* Contrasting color for the heading for emphasis */
+}
+
+.home-container h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #e74c3c;  /* Amber accent for creativity */
+  margin: 4px auto 0;
+  border-radius: 2px;
+}
+
+.home-container .summary:hover {
+  transform: scale(1.05); /* Slight scaling up effect on hover */
+  background-color: #fff3e0; /* Slightly lighter background on hover for effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow for depth on hover */
+}
+
+
+.sauce-button {
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+  display: inline-flex;
+  overflow: hidden;
+  background: transparent;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.sauce-button__content {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25em 3em;
+  width: 100%;
+  color: #4831d4;
+  border: 1px solid currentColor;
+}
+
+.bow-arrow {
+  margin-left: 10px;
+}
+
+.bow-arrow path {
+  transition: stroke 0.3s; /* Add transition effect for stroke color */
+}
+
+.sauce-button:hover .bow-arrow path {
+  stroke: #ffffff; /* Change stroke color to white on hover */
+}
+.sauce-button__content:hover {
+  background: linear-gradient(to right, #4831d4 100%, #4831d4 100%, #fff 50%, #fff 100%);
+  transform: translateX(5px);
+  color: #fff;
+  border-color: #4831d4;
+}
+
+.sauce-button:hover .sauce-button__content {
+  color: #fff; /* Change text color to white on hover */
+}
+
+.sauce-button:hover .bow-arrow path {
+  stroke: #fff; /* Change arrow color to white on hover */
+}
+
+/* Styles for the navigation container */
+#section-nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+/* Styles for the navigation buttons */
+#section-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#section-nav li {
+  margin-bottom: 10px;
+}
+
+.nav-bullet {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc; /* Default button color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-bullet.current {
+  background-color: #DAA520; /* Color for the current section button */
+}
+
+.choose-us {
+  background: linear-gradient(to bottom right, #ffffff, #dbe9ff);
+  padding: 50px 20px;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 50px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.choose-us::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 123, 255, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.choose-us::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 123, 255, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+
+.choose-us::before {
+  content: "";
+  background: url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.headline {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.points {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+  position: relative;
+}
+
+.points div {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.points div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.points i {
+  color: #007bff;
+  margin-right: 15px;
+  font-size: 30px;
+}
+
+.choose-us .custom-button-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.choose-us .custom-button {
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+  display: inline-flex;
+  overflow: hidden;
+  background: transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.choose-us .custom-button-inner {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25em 3em;
+  width: 100%;
+  color: #ffffff;
+  border: 2px solid transparent;
+  background: linear-gradient(to right, #f7b733, #fc4a1a);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+
+.choose-us .custom-button-icon {
+  margin-left: 10px;
+}
+
+.choose-us .custom-button-icon path {
+  stroke: #ffffff;
+  transition: stroke 0.3s;
+}
+
+.choose-us .custom-button:hover .custom-button-inner {
+  background: linear-gradient(to right, #fc4a1a, #f7b733);
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffffff;
+  transform: translateY(-5px);
+}
+
+.choose-us .custom-button:hover .custom-button-icon path {
+  stroke: #ffffff;
+}
+
+.choose-us .custom-button-inner:hover {
+  color: #ffffff;
+}
+
+.get-in-touch {
+  background-color: #f5f5f5; /* Soft, neutral background */
+  padding: 50px 0;
+}
+
+.get-in-touch .inner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.get-in-touch .contact-content {
+  margin-bottom: 30px;
+}
+
+.get-in-touch .contact-content h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.get-in-touch .contact-content p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.get-in-touch .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.get-in-touch .input-group {
+  flex: 0 0 100%;
+  margin-bottom: 20px;
+}
+
+.get-in-touch label {
+  display: block;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.get-in-touch input[type="text"],
+.get-in-touch input[type="email"],
+.get-in-touch textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.get-in-touch textarea {
+  height: 150px;
+}
+
+.get-in-touch .custom-button {
+  background-color: #6c5ce7; /* Purple color scheme */
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.get-in-touch .custom-button:hover {
+  background-color: #4831d4; /* Darker shade on hover */
+}
+
+.get-in-touch .button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.get-in-touch .custom-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.6s ease;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.get-in-touch .custom-button:hover::before {
+  width: 0;
+  height: 0;
+}
+
+
+/* ...........................................................   Responsive design ......................................................................... */
+
+
+@media (max-width: 1800px){
+  .home-container .introduction{
+    width: 80%;
+  }
+
+  .home-container .summary {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Better readability */
+  }
+
+  .home-container .devices-image {
+    margin-top: 20px;
+    width: 400px;
+  }
+
+  .home-container .section-2 .abhishek-image {
+    width: 80%;
+    height: auto;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 1500px){
+  .home-container .summary {
+    font-size: 1rem;
+    line-height: 1.6; /* Better readability */
+    margin-top: 30px;
+  }
+
+  .choose-us {
+    margin: 20px 50px;
+  }
+
+  .choose-us .points div {
+    padding: 10px;
+  }
+  
+  .choose-us .points{
+    line-height: 1.6;
+  }
+}
+
+@media (max-height: 800px) {
+  .home-container .introduction{
+    width: 90%;
+  }
+
+  .home-container .introduction .name {
+    margin-top: 40px;
+  }
+
+  .sauce-button {
+    margin-top: 10px;
+  }
+
+  .home-container .devices-image {
+    margin-top: 20px;
+    width: 400px;
+  }
+
+  .home-container .section-2 .abhishek-image {
+    width: 80%;
+    height: auto;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 1350px){
+  .home-container .introduction{
+    width: 90%;
+  }
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 1150px) {
+  /* Base adjustments for smaller screens */
+body{
+  overflow-y: visible;
+}
+
+.section-3{
+  display: none;
+}
+
+.home-container {
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.home-container .introduction {
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-1, .section-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-container .introduction .name,
+.home-container .introduction .profession,
+.home-container .introduction .tagline {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.home-container .devices-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.section-1,
+.section-2 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.home-container .section-2 .abhishek-image {
+  width: 70%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.home-container .summary {
+  width: 90%;
+  margin: 20px 0;
+}
+
+.choose-us {
+  padding: 20px;
+  margin: 20px 20px;
+}
+
+.choose-us .points div {
+  flex-direction: column;
+  text-align: center;
+}
+
+.choose-us .points i {
+  margin-bottom: 10px;
+}
+
+.get-in-touch .inner-content {
+  padding: 20px;
+}
+
+.get-in-touch .form-row {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.get-in-touch .input-group {
+  flex: 1 0 auto;
+  width: 90%;
+  margin: 10px 0;
+}
+
+
+.home-container .introduction {
+  width: 80%;
+}
+
+.home-container .section-2 .abhishek-image {
+  width: 60%;
+}
+
+.home-container .summary {
+  width: 80%;
+}
+
+.choose-us {
+  width: 90%;
+}
+}
+
+@media (max-width: 992px) {
+  .home-container .introduction {
+    width: 90%;
+  }
+
+  .home-container .section-2 .abhishek-image {
+    width: 80%;
+  }
+
+  .home-container .summary {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .home-container .introduction .name {
+    font-size: 40px;
+  }
+
+  .home-container .introduction .profession {
+    font-size: 20px;
+  }
+
+  .home-container .introduction .tagline {
+    font-size: 16px;
+  }
+
+  .home-container .section-2 .abhishek-image {
+    width: 90%;
+  }
+
+  .choose-us .points i {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-container .introduction .name {
+    font-size: 30px;
+  }
+
+  .home-container .introduction .profession {
+    font-size: 18px;
+  }
+
+  .home-container .introduction .tagline {
+    font-size: 14px;
+  }
+
+  .home-container .section-2 .abhishek-image {
+    width: 100%;
+  }
+
+  .choose-us .points div {
+    padding: 10px;
+  }
+
+  .get-in-touch .inner-content {
+    padding: 10px;
+  }
+
+  .get-in-touch .input-group {
+    width: 80%;
+  }
+
+  .choose-us {
+    margin: 0px 0px;
+  }
+}
+

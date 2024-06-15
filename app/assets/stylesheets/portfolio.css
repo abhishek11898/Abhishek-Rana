@@ -1,0 +1,676 @@
+/* General Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #eef2f5;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  overflow-y: visible !important;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Portfolio Section Styles */
+.portfolio-section {
+  background: linear-gradient(to bottom right, #fffde7, #f0f9ff); /* Light yellow and blue gradient */
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.portfolio-header h2 {
+  font-size: 2.5em;
+  color: #2e86c1; /* Deep blue */
+  position: relative;
+}
+
+.portfolio-header h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #f1c40f; /* Gold */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.portfolio-header p {
+  font-size: 1.2em;
+  color: #555;
+  margin: 0;
+}
+
+.portfolio-section .portfolio-link {
+  text-decoration: none;
+}
+
+.add-work-btn {
+  background-color: #2e86c1; /* Deep blue for a professional look */
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.add-work-btn:hover {
+  background-color: #1b4f72; /* Darker blue on hover */
+  transform: translateY(-3px);
+}
+
+.portfolio-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item {
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+}
+
+.portfolio-item .description{
+	padding: 0 20px 20px 20px;
+	font-size: 17px;
+	word-wrap: break-word;
+	overflow: hidden;
+	line-height: 1.5;
+	display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; 
+	margin-bottom: 20px
+}
+
+.post-content .post-image,
+.portfolio-item img{
+  height: 170px;
+  width: 300px;
+}
+
+.portfolio-item h3 {
+  font-size: 1.5em;
+  color: #2e86c1;
+  margin: 10px 0;
+}
+
+.portfolio-item p {
+  font-size: 1em;
+  color: #555;
+  padding: 0 15px 15px;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative Elements */
+.portfolio-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(241, 196, 15, 0.1); /* Soft gold circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.portfolio-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(46, 134, 193, 0.1); /* Soft blue circle */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-header h2 {
+    font-size: 2em;
+  }
+
+  .portfolio-header p {
+    font-size: 1em;
+  }
+
+  .portfolio-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+
+/* SHOW SECTION */
+/* Project Show Page Styles */
+
+.project-header h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: purple; /* Gold */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Project Show Page Styles */
+
+/* Container Styles */
+.project-show-section {
+  background: linear-gradient(to right, #ffe082, #c5e1a5); /* Gradient background */
+  padding: 50px 0;
+}
+
+.project-show-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Project Header Styles */
+.project-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-header h1 {
+  font-size: 3em;
+  color: #1a237e; /* Dark blue text */
+}
+
+.project-header p {
+  font-size: 1.2em;
+  color: #424242; /* Dark grey text */
+}
+
+/* Project Content Styles */
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Project Details Styles */
+.project-details {
+  margin-right: 30px;
+  flex: 1; /* Adjusted to allow flexibility */
+}
+
+.project-details h2 {
+  font-size: 2.5em;
+  color: #1a237e; /* Dark blue text */
+  margin-bottom: 20px;
+}
+
+.project-details h3 {
+  font-size: 2em;
+  color: #424242; /* Dark grey text */
+  margin-top: 30px;
+}
+
+.project-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-details ul li {
+  font-size: 1.5em;
+  color: #424242; /* Dark grey text */
+  margin-bottom: 10px;
+}
+/* Project Screenshots Styles */
+.project-screenshots {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.project-screenshots h2 {
+  font-size: 2em;
+  color: #1a237e; /* Dark blue text */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.screenshots-div {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to create rows */
+  justify-content: center; /* Center-align items */
+  gap: 20px; /* Gap between screenshots */
+}
+
+.screenshot {
+  width: 300px; /* Set fixed width */
+  height: 200px; /* Set fixed height */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s; /* Smooth zoom effect */
+  object-fit: cover; /* Ensure image fits within specified dimensions */
+}
+
+.screenshot:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .screenshot {
+    width: 250px; /* Adjust width for tablets */
+    height: 167px; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 768px) {
+  .screenshot {
+    width: 200px; /* Adjust width for small tablets */
+    height: 133px; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  .screenshot {
+    width: 150px; /* Adjust width for mobile */
+    height: 100px; /* Maintain aspect ratio */
+  }
+}
+
+
+
+
+/* Project Website Styles */
+.project-website {
+  z-index: 10;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.project-website h3 {
+  font-size: 2em;
+  color: #1a237e; /* Dark blue text */
+}
+
+.project-website p {
+  font-size: 1.5em;
+  color: #424242; /* Dark grey text */
+}
+
+.project-website a {
+  color: #1a237e; /* Dark blue text */
+  text-decoration: none;
+}
+
+.project-website a:hover {
+  text-decoration: underline;
+}
+
+/* Back Button Styles */
+.back-button {
+  display: inline-block;
+  font-size: 1.5em;
+  color: #1a237e; /* Dark blue text */
+  text-decoration: none;
+  margin-top: 30px;
+}
+
+.back-button i {
+  margin-right: 10px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+/* Buttons Container Styles */
+.buttons {
+  display: flex;
+  justify-content: center; /* Center align buttons horizontally */
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px; /* Space above the buttons */
+}
+
+/* General Button Styles */
+button, .buttons a{
+  text-decoration: none;
+  padding: 10px 20px; /* Button padding */
+  font-size: 1em; /* Font size */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Edit Work Button Styles */
+.edit-work-btn {
+  background-color: #2e86c1; /* Blue background */
+  color: white; /* White text */
+}
+
+.edit-work-btn:hover {
+  background-color: #1a5276; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slightly lift button on hover */
+}
+
+/* Delete Work Button Styles */
+.delete-work-btn {
+  background-color: #e74c3c; /* Red background */
+  color: white; /* White text */
+}
+
+.delete-work-btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: translateY(-2px); /* Slightly lift button on hover */
+}
+/* General Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #eef2f5;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+.new-work-page, .edit-work-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* New Work Section Styles */
+.new-work-page .new-work-section,
+.edit-work-page .edit-work-section{
+  background: linear-gradient(to bottom right, #f0f9ff, #fffde7);
+  padding: 50px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.new-work-page .header h1,
+.edit-work-page .header h1  {
+  font-size: 2.5em;
+  color: #2e86c1;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.new-work-page .header,
+.edit-work-page .header{
+  background-color: transparent;
+}
+
+.new-work-page .header h1::after,
+.edit-work-page .header h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #f1c40f;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.new-work-page form,
+.edit-work-page form  {
+  margin-top: 30px;
+}
+
+.new-work-page .form-group,
+.edit-work-page .form-group {
+  margin-bottom: 20px;
+}
+
+.new-work-page .form-group label,
+.edit-work-page .form-group label  {
+  display: block;
+  font-size: 1.2em;
+  color: #2e86c1;
+  margin-bottom: 5px;
+}
+
+.new-work-page .form-group input,
+.new-work-page .form-group textarea,
+.edit-work-page .form-group input,
+.edit-work-page .form-group textarea  {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.new-work-page .submit-button-container,
+.edit-work-page .submit-button-container  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed for spacing */
+}
+
+.existing-image .image-div img,
+.existing-video video{
+  width: 300px; 
+  height: 200px;
+}
+
+.new-work-page .submit-button,
+.edit-work-page .submit-button {
+  background-color: #2e86c1;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.new-work-page .submit-button:hover,
+.edit-work-page .submit-button:hover {
+  background-color: #1b4f72;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-work-page .submit-button:active,
+.edit-work-page .submit-button:active {
+  background-color: #154360;
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/* Decorative Elements */
+.new-work-page .new-work-section::before,
+.edit-work-page .edit-work-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(241, 196, 15, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.new-work-page .new-work-section::after,
+.edit-work-page .edit-work-section::after  {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(46, 134, 193, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .new-work-page .header h1,
+  .edit-work-page .header h1 {
+    font-size: 2em;
+  }
+  
+  .new-work-page .form-group input,
+  .new-work-page .form-group textarea,
+  .edit-work-page .form-group input,
+  .edit-work-page .form-group textarea {
+    font-size: 1em;
+  }
+}
+
+.existing-screenshots {
+  display: flex;
+  flex-wrap: nowrap; /* Ensures all items are on a single row */ /* Adds horizontal scrolling if necessary */      /* Adds some space between the screenshots */
+}
+
+.screenshot {
+  flex: 0 0 auto;    /* Prevents the items from shrinking */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.screenshot-div img {
+  max-width: 100px;  /* Ensures the image is within the desired size */
+  max-height: 100px;
+  margin: 10px;
+}
+
+
+/* ..............................................show pages Responsive........................................................... */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .project-header h1 {
+    font-size: 2.5em;
+  }
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-details {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-header h1 {
+    font-size: 2em;
+  }
+
+  .project-header p,
+  .project-details h2,
+  .project-details h3,
+  .project-details ul li,
+  .project-website h3,
+  .project-website p,
+  .back-button {
+    font-size: 1.2em;
+  }
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-details {
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .project-screenshots {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .screenshot-container {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header h1 {
+    font-size: 1.8em;
+  }
+
+  .project-header p,
+  .project-details h2,
+  .project-details h3,
+  .project-details ul li,
+  .project-website h3,
+  .project-website p,
+  .back-button {
+    font-size: 1em;
+  }
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-details {
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .project-screenshots {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .screenshot-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
