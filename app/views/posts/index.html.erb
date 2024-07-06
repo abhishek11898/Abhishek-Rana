@@ -8,7 +8,9 @@
     <div class="post-header">
       <h2>Insights & Inspirations</h2>
       <p>Dive into a treasure trove of web development expertise, where I share insights, tips, and tutorials to inspire your coding journey and elevate your skills.</p>
-      <%=button_to 'Add-Post', new_post_path, class: "add-work-btn", method: :get%>
+      <%if user_signed_in?%>
+        <%=button_to 'Add-Post', new_post_path, class: "add-work-btn", method: :get%>
+      <%end%>
     </div>
     <div class="post-content">
       <%if @posts.present?%>

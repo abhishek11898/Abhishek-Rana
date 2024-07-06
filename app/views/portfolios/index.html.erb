@@ -1,13 +1,15 @@
 <% content_for :stylesheets do %>
   <%= stylesheet_link_tag 'portfolio.css', media: 'all', 'data-turbolinks-track': 'reload' %>
-<% end %>
+<% end %>  
 
 <section class="portfolio-section">
   <div class="container">
     <div class="portfolio-header">
       <h2>My Work </h2>
       <p>A showcase of my projects and contributions in web development.</p>
-      <%=button_to 'Add-Work', new_portfolio_path, class: "add-work-btn", method: :get%>
+      <%if user_signed_in?%>
+        <%=button_to 'Add-Work', new_portfolio_path, class: "add-work-btn", method: :get%>
+      <%end%>
     </div>
     <div class="portfolio-content">
       <%if @portfolios.present?%>

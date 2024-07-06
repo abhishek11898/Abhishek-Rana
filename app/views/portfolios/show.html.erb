@@ -6,10 +6,12 @@
   <div class="container">
     <div class="project-header">
         <h1><%= @portfolio.title%></h1>
-        <div class='buttons'>
-          <%=link_to 'Edit-Work', edit_portfolio_path(@portfolio), class: "edit-work-btn", method: :get%>
-          <%= link_to 'Delete-Work', portfolio_path(@portfolio), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
-        </div>
+        <%if user_signed_in?%>
+          <div class='buttons'>
+            <%=link_to 'Edit-Work', edit_portfolio_path(@portfolio), class: "edit-work-btn", method: :get%>
+            <%= link_to 'Delete-Work', portfolio_path(@portfolio), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
+          </div>
+        <%end%>
     </div>
     <div class="project-content">
       <div class="project-details">

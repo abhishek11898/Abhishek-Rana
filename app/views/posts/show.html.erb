@@ -8,8 +8,10 @@
     <h1><%= @post.title%></h1>
     <p class="blog-meta">Written by <span class="blog-author">Author Name</span> on <span class="blog-date">Date</span></p>
     <div class='buttons'>
-      <%=link_to 'Edit-Work', edit_post_path(@post), class: "edit-work-btn", method: :get%>
-      <%= link_to 'Delete-Work', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
+      <%if user_signed_in?%>
+        <%=link_to 'Edit-Work', edit_post_path(@post), class: "edit-work-btn", method: :get%>
+        <%= link_to 'Delete-Work', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
+      <%end%>
     </div>
   </div>
   <div class="blog-content">
