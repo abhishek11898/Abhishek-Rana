@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #eef2f5;
+    background-color: #f5f5dc !important; /* Light beige */
     color: #444;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
   }
   
   /* Container Styles */
-  .container {
+  .post-section .container{
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;

@@ -91,15 +91,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: 'yourdomain.com',
-    user_name: Rails.application.credentials.dig(:gmail, :user_name),
-    password: Rails.application.credentials.dig(:gmail, :password),
-    authentication: 'plain',
+    address:              'smtp.gmail.com',
+    port:                 587, # Use 587 for TLS/STARTTLS
+    domain:               'abhishekrana.me',
+    user_name:            'abhishekgugle@gmail.com',
+    password:              ENV['GMAIL_PASSWORD'],
+    authentication:       'plain',
     enable_starttls_auto: true
-  }  
-  config.action_mailer.default_url_options = { host: 'yourdomain.com' }
+  }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
   
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

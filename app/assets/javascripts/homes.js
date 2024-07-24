@@ -1,13 +1,22 @@
 jQuery(document).ready(function() {
   scrollingByKeyboard();
 
-  jQuery('.section-3 .nav-bullet, .home-container .sauce-button__content').on('click', function() {
-    scrollToSection(this);
+  jQuery('.section-3 .nav-bullet').on('click', function() {
+    $this = jQuery(this);
+    scrollToSection($this);
+  });
+
+  jQuery('.home-container .sauce-button__content').on('click', function() {
+    $this =  jQuery(this);
+    var sectionId = $this.data('section');
+    var section = jQuery('.' + sectionId)[0];
+    jQuery($this).closest('.home-container').find('.current').removeClass('current');
+    jQuery('.section-3 .nav-bullet[data-section="get-in-touch').addClass('current');
+    section.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
 function scrollToSection($this) {
-  $this = jQuery($this);
   var sectionId = $this.data('section');
   var section = jQuery('.' + sectionId)[0];
   jQuery($this).closest('#section-nav').find('.current').removeClass('current');

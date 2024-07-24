@@ -2,32 +2,33 @@
   <%= stylesheet_link_tag 'post.css', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'portfolio.css', media: 'all', 'data-turbolinks-track': 'reload' %>
 <% end %>
-
-<section class="blog-show-page">
-  <div class="blog-header">
-    <h1><%= @post.title%></h1>
-    <p class="blog-meta">Written by <span class="blog-author">Author Name</span> on <span class="blog-date">Date</span></p>
-    <div class='buttons'>
-      <%if user_signed_in?%>
-        <%=link_to 'Edit-Work', edit_post_path(@post), class: "edit-work-btn", method: :get%>
-        <%= link_to 'Delete-Work', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
-      <%end%>
+<div class='blog-show-page-container'>
+  <section class="blog-show-page">
+    <div class="blog-header">
+      <h1><%= @post.title%></h1>
+      <p class="blog-meta">Written by <span class="blog-author">Author Name</span> on <span class="blog-date">Date</span></p>
+      <div class='buttons'>
+        <%if user_signed_in?%>
+          <%=link_to 'Edit-Work', edit_post_path(@post), class: "edit-work-btn", method: :get%>
+          <%= link_to 'Delete-Work', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-work-btn' %>
+        <%end%>
+      </div>
     </div>
-  </div>
-  <div class="blog-content">
-    <div class="blog-image">
-      <%= image_tag("/assets/post/images/#{@post.id}/#{@post.image_name}", alt: "hero-devices", 
-        onerror: "this.onerror=null;this.src='hero-devices';")
-      %>
+    <div class="blog-content">
+      <div class="blog-image">
+        <%= image_tag("/assets/post/images/#{@post.id}/#{@post.image_name}", alt: "hero-devices", 
+          onerror: "this.onerror=null;this.src='hero-devices';")
+        %>
+      </div>
+      <div class="blog-text">
+        <p>T<%= @post.description%></p>
+      </div>
     </div>
-    <div class="blog-text">
-      <p>T<%= @post.description%></p>
+    <div class="blog-footer">
+      <%= link_to '/posts', class: 'back-button' do %>
+        <i class="fas fa-arrow-left"></i>
+        Back to Blog Lists
+      <% end %>
     </div>
-  </div>
-  <div class="blog-footer">
-    <%= link_to '/posts', class: 'back-button' do %>
-      <i class="fas fa-arrow-left"></i>
-      Back to Blog Lists
-    <% end %>
-  </div>
-</section>
+  </section>
+</div>

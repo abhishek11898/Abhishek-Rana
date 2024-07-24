@@ -57,16 +57,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '23b145d55891ad',
-    :password => '51a34b00f9765e',
-    :address => 'sandbox.smtp.mailtrap.io',
-    :host => 'sandbox.smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :login
+    address:              'smtp.gmail.com',
+    port:                 587, # Use 587 for TLS/STARTTLS
+    domain:               'abhishekrana.me',
+    user_name:            'abhishekgugle@gmail.com',
+    password:             '',
+    authentication:       'plain',
+    enable_starttls_auto: true
   }
-  
-  # Ensure you have set the host for URLs in mailers
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
